@@ -192,9 +192,7 @@ img {
     align-items: center;
     height: 90vh;
     padding: 0 7em;
-    background: url(Images/virender-singh-wlrGF9qkXFw-unsplash.jpg) no-repeat ;
-    background-attachment: fixed;
-    background-position: bottom center;
+    background: url(Images/virender-singh-wlrGF9qkXFw-unsplash.jpg) no-repeat bottom center;
     background-size: cover;
     border-bottom-left-radius: 5rem;
     border-bottom-right-radius: 5rem;
@@ -982,12 +980,17 @@ svg {
         border-radius: 3rem;
     }
     .subscribe-form {
-        flex-direction: row;
+        flex-direction: column;
         padding: 3em 0em 0 0em;
         gap: 1em;
     }
-    
-
+    label, .email-button {
+        width: 50%;
+        margin: auto;
+    }
+    .email-input{
+        width: 100%;
+    }
     #main-footer {
         padding: 5em 1.5em 3em;
         border-top-left-radius: 3rem;
