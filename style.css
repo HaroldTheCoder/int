@@ -365,6 +365,20 @@ svg {
 .portfolio-paragraph {
     padding-bottom: 0;
 }
+/* Partners Style*/
+#partners {
+    padding: 5em 7em 10em 7em;
+    position: relative;
+}
+.partners-logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.brand-logo {
+    width: 200px;
+}
 /* Team Style */
 #team {
     padding: 10em 7em;
@@ -427,7 +441,6 @@ svg {
     font-size: 16px;
     color: #767d80;
 }
-
 /* Subscribe Style */
 #subscribe {
     width: 85%;
@@ -443,11 +456,22 @@ svg {
     padding: 3em 7em 0 7em;
     gap: 1em;
 }
+label {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0 1em;
+}
 .email-input {
     width: 40em;
     padding: 1em;
     border: none;
 }
+.email-input:focus {
+    outline-color: #767d80;
+}
+
 .email-input::placeholder {
     color: #9ca5a8;
 }
@@ -455,19 +479,15 @@ svg {
     margin: 0;
     width: 15%;
 }
-/* Partners Style*/
-#partners {
-    padding: 5em 7em 10em 7em;
-    position: relative;
+.error-icon {
+    opacity: 0;
 }
-.partners-logo-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.brand-logo {
-    width: 200px;
+.error-message {
+    padding: 1em 0;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(238, 75, 75);
+    opacity: 0;
 }
 
 /* Footer */

@@ -57,12 +57,12 @@
             </ul>
 
                 <p class="social-links-wrap">
-                        <a href="" class="mobile-link" target="_blank"><i class="fab fa-facebook-square icons"></i></a>
-                        <a href="" class="mobile-link"  target="_blank"><i class="fab fa-instagram icons"></i></a>
-                        <a href="" class="mobile-link"  target="_blank"><i class="fa fa-twitter icons"></i></a>
-                        <a href="" class="mobile-link"  target="_blank"><i class="fa fa-linkedin icons "></i></a>
-                        <a href="" class="mobile-link"  target="_blank"><i class="fab fa-yelp icons"></i></a>
-                        <a href="" class="mobile-link"  target="_blank"><i class="fa fa-youtube icons "></i></a>
+                    <a href="" class="mobile-link" target="_blank"><i class="fab fa-facebook-square icons"></i></a>
+                    <a href="" class="mobile-link"  target="_blank"><i class="fab fa-instagram icons"></i></a>
+                    <a href="" class="mobile-link"  target="_blank"><i class="fa fa-twitter icons"></i></a>
+                    <a href="" class="mobile-link"  target="_blank"><i class="fa fa-linkedin icons "></i></a>
+                    <a href="" class="mobile-link"  target="_blank"><i class="fab fa-yelp icons"></i></a>
+                    <a href="" class="mobile-link"  target="_blank"><i class="fa fa-youtube icons "></i></a>
                 </p>
             </div>
         </div>
@@ -70,7 +70,7 @@
 
     
     <!--Main Page Header-->
-    <div class="nav-active-layer"></div>
+    <div class="nav-active-layer"></div> <!-- dark layer for active navbar window -->
     <section id="hero-section">
         <div class="hero-title">
             <h1>Innovation for your Home</h1>
@@ -254,13 +254,15 @@
             </header>
             <form action="" class="subscribe-form">
                 <label for="email">
-                    <input type="email" id="email" class="email-input" name="email" placeholder="Enter your email">
+                    <input type="text" id="email" class="email-input" name="email" placeholder="Enter your email">
+                    <svg class="error-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#FF7979" cx="12" cy="12" r="12"/><rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"/><rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"/></g></svg>
                 </label>
                 <button type="submit" class="email-button button" name="submit">Subscribe</button>
+                
             </form>
+            <p class="error-message">Email not valid! Enter a valid email.</p>
         </section>
-
-        
+  
     </main>
  
     <!-- Footer -->
