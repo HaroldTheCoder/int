@@ -190,9 +190,11 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 75vh;
+    height: 90vh;
     padding: 0 7em;
-    background: url(Images/virender-singh-wlrGF9qkXFw-unsplash.jpg) no-repeat bottom center;
+    background: url(Images/virender-singh-wlrGF9qkXFw-unsplash.jpg) no-repeat ;
+    background-attachment: fixed;
+    background-position: bottom center;
     background-size: cover;
     border-bottom-left-radius: 5rem;
     border-bottom-right-radius: 5rem;
@@ -1053,15 +1055,18 @@ svg {
     padding: 0 10em;
     }
     #hero-section {
-        height: 90vh;
+        height: 100vh;
         padding: 0 10em;
         background-position: center center;
     }
+    #about {
+        margin-top: 0;
+    }
     .hero-title h1 {
-        font-size: 3.5em;
+        font-size: 5em;
     }
     .hero-title {
-        width: 40em;
+        width: 60em;
     }
     .service-img-container, .box-mask {
         height: 400px;
