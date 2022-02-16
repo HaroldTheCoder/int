@@ -34,6 +34,97 @@ img {
     height: 100%;
     border-radius: 1rem;
 }
+/* Mobile Navbar Style */ 
+.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2em;
+    width: 100%;
+}
+.bar {
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+}
+.bar:nth-child(2) {
+    width: 25px;
+    z-index: 2;
+}
+.button-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.close-button {
+    width: 25px;
+    height: 25px;
+}
+.close-button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.navigation-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 5em;
+}
+.navbar-mobile {
+    width: 75vw;
+    height: 100vh;
+    padding: 1.5em;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    text-align: center;
+    background-color: #000;
+    z-index: 3;
+}
+.navigation-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+.navigation-mobile .nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+.navigation-mobile .nav-item a {
+    color: #fff;
+}
+.active {
+    right: 0;
+    transition: right ease 0.5s;
+}
+.inactive {
+    right: -100%;
+    transition: right ease 0.5s;
+}
+.item-active {
+    background-color: #000;
+}
+.nav-active-layer {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.527);
+    display: none;
+}
+.disable-scroll {
+    overflow: hidden;
+}
 /* Top Navbar Style */
 #main-header {
     width: 100%;
@@ -42,7 +133,6 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    
 }
 #top-navbar {
     display: flex;
@@ -59,13 +149,11 @@ img {
 .logo, .nav-link{
     color: #000;
 }
-.navbar {
+.navbar-mobile, .nav-button-container {display: none;}
+.navbar-desktop {
     list-style-type: none;
     display: flex;
     gap: 1em;
-}
-.nav-container {
-    padding-right: 5em;
 }
 .nav-item {
     padding: 3.3em 0.5em 2em 0.5em;  
@@ -102,7 +190,7 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 750px;
+    height: 75vh;
     padding: 0 7em;
     background: url(Images/virender-singh-wlrGF9qkXFw-unsplash.jpg) no-repeat bottom center;
     background-size: cover;
@@ -298,11 +386,17 @@ svg {
     box-shadow: 0px 10px 30px rgba(116, 131, 136, 0.2);
     border-radius: 0.8em;
 }
+
 .card-header {
     width: 100%;
-    height: 300px;
+    height: 100%;
+    position: relative;
+    padding-top: 100%;
 }
 .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -370,9 +464,10 @@ svg {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 .brand-logo {
-    width: 250px;
+    width: 200px;
 }
 
 /* Footer */
@@ -432,4 +527,544 @@ svg {
     color: #fff;
     background-color: #000;
     font-size: 0.7em;
+}
+/* Media Queries */
+@media  screen and (max-width:375px) {
+    .navbar-desktop, .contact-wrap {display: none;}
+    .navbar-mobile, .nav-button-container { display: block;}
+    .item-active {
+        background-color: #000;
+    }
+    .nav-hr {
+        height: 3px;
+        margin: 1% auto;
+        opacity: 0;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+    font-size: 1.25em;
+    }
+    #main-header {
+        padding: 0 1.5em;
+    }
+    .logo img{
+        width: 70px;
+        margin-top: 15%;
+    }
+    #hero-section {
+        height: 630px;
+        padding: 0 1.5em;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+    }
+    .hero-title {
+        gap: 1em;
+        width: 18.5em;
+        padding-top: 0;
+    }
+    .hero-title h1 {
+        font-size: 2em;
+    }
+    .hero-title p {
+        font-size: 1em;
+    }
+    .button {
+        margin: 0;
+    }
+    .section-header {
+        padding: 1em 0; 
+    }
+    .heading-watermark {
+        top: 20%;
+        font-size: 4em;
+        letter-spacing: 5px;
+    }
+    #about {
+        margin-top: 0;
+        padding: 5em 1.5em 5em 1.5em;
+    }
+    #services, #portfolio, #team {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .section-content {
+        flex-direction: column;
+        gap: 3em;
+        padding: 5em 0 0 0;
+    }
+    .section-content-left, 
+    .section-content-right {
+        width: 100%;
+    }
+    .section-paragraph {
+        padding-bottom: 3em;
+    }
+    .services-container {
+        flex-direction: column;
+        padding: 5em 0;
+    }
+    #portfolio .section-content-left,
+    #portfolio .section-content-right {
+        width: 100%;
+    }
+    .portfolio-grid {
+        display: grid;
+        grid-template-areas: "box-1 box-1 box-1 box-1"
+                                "box-2 box-2 box-2 box-2"
+                                    "box-3 box-3 box-3 box-3";
+        gap: 3em;
+    }
+    .p-img-1 {
+        padding-top: 3em;
+    }
+    .p-img-3 {
+        padding-bottom: 0em;
+    }
+    .portfolio-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .portfolio-paragraph {
+        padding-bottom: 3em;
+    }
+    #team {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .card-container {
+        flex-direction: column;
+        gap: 5em;
+        padding: 3em 0;
+    }
+    #partners {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .partners-logo-container {
+        flex-wrap: wrap;    
+    }
+    .brand-logo {
+        width: 135px;
+    }
+    #subscribe {
+        width: 90%;
+        margin: 5em auto 7em auto;
+        padding: 5em 1.5em;
+        border-radius: 3rem;
+    }
+    .subscribe-form {
+        flex-direction: column;
+        padding: 3em 0em 0 0em;
+        gap: 1em;
+    }
+    label, .email-input,
+    .email-button 
+    {width: 100%}
+
+    #main-footer {
+        padding: 5em 1.5em 3em;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        text-align: center;
+    }
+    .footer-logo img {
+        margin-top: 0%;
+        margin-left: 10px;
+        width: 140px;   
+    }
+    .footer-content, .link-container {
+        align-items: center;
+        flex-direction: column;
+        gap: 3em;
+    }   
+    .footer-content {
+        padding: 3em 0;
+    }
+    .link-container {
+        width: 100%;
+    }
+    .footer-item {
+        padding: 0.5em 0;
+    }
+    .contact-info {
+        padding-top: 2em;
+    }
+    #credit {
+        font-size: 0.5em;
+    }
+}
+@media  screen and (min-width:376px) and (max-width: 414px) {
+    .navbar-desktop, .contact-wrap {display: none;}
+    .navbar-mobile, .nav-button-container { display: block;}
+    .item-active {
+        background-color: #000;
+    }
+    .nav-hr {
+        height: 3px;
+        margin: 1% auto;
+        opacity: 0;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+    font-size: 1.25em;
+    }
+    #main-header {
+        padding: 0 1.5em;
+    }
+    .logo img{
+        width: 70px;
+        margin-top: 15%;
+    }
+    #hero-section {
+        height: 630px;
+        padding: 0 1.5em;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+    }
+    .hero-title {
+        gap: 1em;
+        width: 18.5em;
+        padding-top: 0;
+    }
+    .hero-title h1 {
+        font-size: 2em;
+    }
+    .hero-title p {
+        font-size: 1em;
+    }
+    .button {
+        margin: 0;
+    }
+    .section-header {
+        padding: 1em 0; 
+    }
+    .heading-watermark {
+        top: 20%;
+        font-size: 4em;
+        letter-spacing: 5px;
+    }
+    #about {
+        margin-top: 0;
+        padding: 5em 1.5em 5em 1.5em;
+    }
+    #services, #portfolio, #team {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .section-content {
+        flex-direction: column;
+        gap: 3em;
+        padding: 5em 0 0 0;
+    }
+    .section-content-left, 
+    .section-content-right {
+        width: 100%;
+    }
+    .section-paragraph {
+        padding-bottom: 3em;
+    }
+    .services-container {
+        flex-direction: column;
+        padding: 5em 0;
+    }
+    #portfolio .section-content-left,
+    #portfolio .section-content-right {
+        width: 100%;
+    }
+    .portfolio-grid {
+        display: grid;
+        grid-template-areas: "box-1 box-1 box-1 box-1"
+                                "box-2 box-2 box-2 box-2"
+                                    "box-3 box-3 box-3 box-3";
+        gap: 3em;
+    }
+    .p-img-1 {
+        padding-top: 3em;
+    }
+    .p-img-3 {
+        padding-bottom: 0em;
+    }
+    .portfolio-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .portfolio-paragraph {
+        padding-bottom: 3em;
+    }
+    #team {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .card-container {
+        flex-direction: column;
+        gap: 5em;
+        padding: 3em 0;
+    }
+    #partners {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .partners-logo-container {
+        flex-wrap: wrap;    
+    }
+    .brand-logo {
+        width: 150px;
+    }
+    #subscribe {
+        width: 90%;
+        margin: 5em auto 7em auto;
+        padding: 5em 1.5em;
+        border-radius: 3rem;
+    }
+    .subscribe-form {
+        flex-direction: column;
+        padding: 3em 0em 0 0em;
+        gap: 1em;
+    }
+    label, .email-input,
+    .email-button 
+    {width: 100%}
+
+    #main-footer {
+        padding: 5em 1.5em 3em;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        text-align: center;
+    }
+    .footer-logo img {
+        margin-top: 0%;
+        margin-left: 10px;
+        width: 140px;   
+    }
+    .footer-content, .link-container {
+        align-items: center;
+        flex-direction: column;
+        gap: 3em;
+    }   
+    .footer-content {
+        padding: 3em 0;
+    }
+    .link-container {
+        width: 100%;
+    }
+    .footer-item {
+        padding: 0.5em 0;
+    }
+    .contact-info {
+        padding-top: 2em;
+    }
+    #credit {
+        font-size: 0.5em;
+    }
+}
+@media  screen and (min-width:415px) and (max-width: 900px) {
+    .navbar-desktop, .contact-wrap {display: none;}
+    .navbar-mobile, .nav-button-container { display: block;}
+    .item-active {
+        background-color: #000;
+    }
+    .nav-hr {
+        height: 3px;
+        margin: 1% auto;
+        opacity: 0;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+    font-size: 1.25em;
+    }
+    #main-header {
+        padding: 0 3em;
+    }
+    .logo img{
+        width: 70px;
+        margin-top: 15%;
+    }
+    #hero-section {
+        height: 630px;
+        padding: 0 3em;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+    }
+    .hero-title {
+        gap: 1em;
+        width: 18.5em;
+        padding-top: 0;
+    }
+    .hero-title h1 {
+        font-size: 2em;
+    }
+    .hero-title p {
+        font-size: 1em;
+    }
+    .button {
+        margin: 0;
+    }
+    .section-header {
+        padding: 1em 0; 
+    }
+    .heading-watermark {
+        top: 20%;
+        font-size: 4em;
+        letter-spacing: 5px;
+    }
+    #about {
+        margin-top: 0;
+        padding: 5em 1.5em 5em 1.5em;
+    }
+    #services, #portfolio, #team {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .section-content {
+        flex-direction: column;
+        gap: 3em;
+        padding: 5em 0 0 0;
+    }
+    .section-content-left, 
+    .section-content-right {
+        width: 100%;
+    }
+    .section-paragraph {
+        padding-bottom: 3em;
+    }
+    .services-container {
+        flex-direction: column;
+        padding: 5em 0;
+    }
+    #portfolio .section-content-left,
+    #portfolio .section-content-right {
+        width: 100%;
+    }
+    .portfolio-grid {
+        display: grid;
+        grid-template-areas: "box-1 box-1 box-2 box-2 box-3 box-3"
+                                "box-1 box-1 box-2 box-2 box-3 box-3"
+                                    "box-1 box-1 box-2 box-2 box-3 box-3";
+        gap: 2em;
+    }
+    .p-img-1 {
+        padding-top: 0em;
+    }
+    .p-img-3 {
+        padding-bottom: 0em;
+    }
+    .portfolio-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .portfolio-paragraph {
+        padding-bottom: 3em;
+    }
+    #team {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .card-container {
+        gap: 1em;
+        padding: 3em 0;
+    }
+    #partners {
+        padding: 3em 1.5em 3em 1.5em;
+    }
+    .partners-logo-container {
+        flex-wrap: wrap;    
+    }
+    .brand-logo {
+        width: 150px;
+    }
+    #subscribe {
+        width: 90%;
+        margin: 5em auto 7em auto;
+        padding: 5em 1.5em;
+        border-radius: 3rem;
+    }
+    .subscribe-form {
+        flex-direction: row;
+        padding: 3em 0em 0 0em;
+        gap: 1em;
+    }
+    
+
+    #main-footer {
+        padding: 5em 1.5em 3em;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        text-align: center;
+    }
+    .footer-logo img {
+        margin-top: 0%;
+        margin-left: 10px;
+        width: 140px;   
+    }
+    .footer-content, .link-container {
+        align-items: center;
+        flex-direction: column;
+        gap: 3em;
+    }   
+    .footer-content {
+        padding: 3em 0;
+    }
+    .link-container {
+        width: 100%;
+    }
+    .footer-item {
+        padding: 0.5em 0;
+    }
+    .contact-info {
+        padding-top: 2em;
+    }
+    #credit {
+        font-size: 0.5em;
+    }
+}
+@media  screen and (min-width:901px) and (max-width: 1112px) {
+    #services, #portfolio, #team {
+        padding: 5em 2em 5em 2em;
+    }
+    #about {
+        padding: 15em 2em 10em 2em;
+    }
+    .section-content {
+        padding: 5em 0 0 0;
+    }
+     .services-container {
+        padding: 10em 0;
+    }
+    .card-container {
+        gap: 2em;
+        padding: 3em 5em;
+    }
+    .card-container {
+        gap: 1em;
+        padding: 3em 1em;
+    }
+    .partners-logo-container {
+        flex-wrap: wrap;    
+    }
+}
+
+@media  screen and (min-width: 1700px) {
+    body {
+        width: 90%;
+        margin: auto;
+    }
+    #main-header {
+    padding: 0 10em;
+    }
+    #hero-section {
+        height: 90vh;
+        padding: 0 10em;
+        background-position: center center;
+    }
+    .hero-title h1 {
+        font-size: 3.5em;
+    }
+    .hero-title {
+        width: 40em;
+    }
+    .service-img-container, .box-mask {
+        height: 400px;
+    }
+
 }
