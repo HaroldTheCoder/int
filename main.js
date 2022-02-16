@@ -17,9 +17,9 @@ closeButton.addEventListener('click', ()=> {
     activelayer.style.display = 'none';
     document.body.classList.remove('disable-scroll');
 });
-mobileLink.addEventListener('click', ()=> {
+mobileLink.forEach((i) => i.addEventListener('click', ()=> {
     navMobile.classList.add('inactive');
     navMobile.classList.remove('active');
     activelayer.style.display = 'none';
     document.body.classList.remove('disable-scroll');
-});
+}));
